@@ -22,3 +22,7 @@ use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard');
+
+//C
+Route::post('/person', [WelcomeController::class, 'store'])->name('person.store');
+

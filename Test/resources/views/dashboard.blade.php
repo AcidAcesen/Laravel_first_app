@@ -17,6 +17,22 @@
         <button type="submit">Add Person</button>
     </form>
 
-    <!-- ... -->
+    <h2>People</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($people as $person)
+                <tr>
+                    <td>{{ $person->id }}</td>
+                    <td>{{ $person->name }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>

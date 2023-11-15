@@ -11,12 +11,12 @@ class WelcomeController extends Controller
     {
         return view('welcome');
     }
-
+    /*
     public function dashboard()
     {
         return view('dashboard');
     }
-
+    */
     //C
     public function store(Request $request)
     {
@@ -27,5 +27,12 @@ class WelcomeController extends Controller
     Person::create(['name' => $request->name]);
 
     return redirect()->route('dashboard')->with('success', 'Person added successfully!');
+    }
+    //R
+    public function dashboard()
+    {
+        $people = Person::all();
+
+        return view('dashboard', ['people' => $people]);
     }
 }

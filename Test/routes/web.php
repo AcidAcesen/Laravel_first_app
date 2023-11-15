@@ -25,4 +25,9 @@ Route::get('/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboa
 
 //C
 Route::post('/person', [WelcomeController::class, 'store'])->name('person.store');
+//U
+Route::get('/person/{id}/edit', [WelcomeController::class, 'edit'])->name('person.edit');
+Route::put('/person/{id}', [WelcomeController::class, 'update'])->name('person.update');
+//D
+Route::delete('/person/{id}', [WelcomeController::class, 'destroy'])->name('person.destroy');
 

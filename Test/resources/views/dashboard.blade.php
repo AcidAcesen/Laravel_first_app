@@ -23,6 +23,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,14 @@
                 <tr>
                     <td>{{ $person->id }}</td>
                     <td>{{ $person->name }}</td>
+                    <td>
+                        <a href="{{ route('person.edit', $person->id) }}">Edit</a>
+                        <form action="{{ route('person.destroy', $person->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
